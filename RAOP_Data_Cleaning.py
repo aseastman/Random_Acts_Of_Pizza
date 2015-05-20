@@ -8,6 +8,9 @@ def find_number(s):
     return l
 #Import modules
 import csv
+import pandas as pd
+#import json
+#from pprint import pprint
 
 #Arrays needing to be pre-defined
 temp = []
@@ -36,7 +39,6 @@ for row in train:
         
         elif '},' in row[1]:
             raop_data.append(htemp)
-            htemp = []
             header = True
         else:
             pass
@@ -68,4 +70,13 @@ with open('RAOP_Cleaned_Data.csv', 'wb') as ofile:
     writer = csv.writer(ofile, delimiter=',', quotechar='"',quoting=csv.QUOTE_ALL)
     for r in raop_data:
         writer.writerow(r)        
+        
+###################TEST FILE#############   
+test = pd.read_json('test.json')
+test.to_csv('RAOP_Cleaned_Test_File.csv', encoding='utf-8')
+  
+
+    
+        
+        
         
