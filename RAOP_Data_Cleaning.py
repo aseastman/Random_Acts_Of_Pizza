@@ -6,7 +6,7 @@ def find_number(s):
         except ValueError:
             pass
     return l
-#Imports
+#Import modules
 import csv
 
 #Arrays needing to be pre-defined
@@ -18,8 +18,6 @@ header = False
 #Open up the train csv
 temp2 = open('train.csv','rb')
 train = csv.reader(temp2)
-
-
 
 for row in train:
     #Make a header
@@ -66,5 +64,8 @@ for row in train:
     else:
         pass
         
-        
+with open('RAOP_Cleaned_Data.csv', 'wb') as ofile:    
+    writer = csv.writer(ofile, delimiter=',', quotechar='"',quoting=csv.QUOTE_ALL)
+    for r in raop_data:
+        writer.writerow(r)        
         
