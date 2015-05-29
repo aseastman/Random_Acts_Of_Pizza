@@ -24,3 +24,10 @@ test.json
 
 train.csv
 - The csv file with all the training data.
+
+Other Analysis Folder:
+	RAOP_Analyze_a_Story.py
+	- This script takes the training data, structures it, does some quick statistical analysis, and comes to some general conclusions.
+
+	train.json
+	- The json file for the training data.
